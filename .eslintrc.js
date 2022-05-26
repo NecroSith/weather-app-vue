@@ -18,6 +18,11 @@ module.exports = {
       named: 'never',
       asyncArrow: 'always'
     }],
-    "no-extra-semi": "off"
+    "no-extra-semi": "off",
+    'indent': 'off',
+    'semi': "off",
+    'no-trailing-spaces': "off",
+    'quotes': 'off'
+
   }
 }

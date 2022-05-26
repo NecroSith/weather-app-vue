@@ -5,7 +5,7 @@
         <img src="../assets/weather-news.png" alt="weather logo">
       </a>
       <div class="header__input">
-        <input type="text" placeholder="Enter the city" onkeydown="searchWeather()">
+        <input type="text" placeholder="Enter the city to search" v-model="cityToFind" v-on:keyup.enter="searchWeather()">
       </div>
       <nav class="header__menu">
         <ul>
@@ -22,11 +22,17 @@
 </template>
 
 <script>
+
 export default {
   name: 'MainHeader',
   data() {
     return {
       cityToFind: ''
+    }
+  },
+  methods: {
+    searchWeather() {
+      this.$router.push(`/result/${this.cityToFind}`);
     }
   }
 }
@@ -48,6 +54,12 @@ export default {
   }
   .header__logo img {
     width: 30px;
+  }
+  .header__input input {
+    height: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 200px;
   }
   .header__menu {
     padding-top: 5px;

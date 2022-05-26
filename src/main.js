@@ -10,6 +10,10 @@ const routes = [
     path: '/',
     component: HelloWorld
   },
+  {
+    path: '/result/:city',
+    component: HelloWorld
+  },
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
   { path: '/:pathMatch(.*)', name: 'bad-not-found', component: NotFound }
 ]
