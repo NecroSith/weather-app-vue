@@ -14,19 +14,16 @@ export default class WeatherService {
       .then(res => {
         this.coordsToProcess.lat = res.data[0].lat
         this.coordsToProcess.lon = res.data[0].lon
-        console.log('data geocoded', this.coordsToProcess, res.data)
       });
   }
 
   getForecast(cityName) {
       return this.getCoordsByCityName(cityName)
         .then(() => {
-          console.log('we here', this.coordsToProcess)
           const coords = this.coordsToProcess
-          const apiForecastUrl = `${this.apiBase}/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&exclude=minutely,alerts&appid=${this.apiKey}`
+          const apiForecastUrl = `${this.apiBase}/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&units=metric&exclude=minutely,alerts&appid=${this.apiKey}`
 
-          return axios.get(apiForecastUrl)
-            .then(res => res.data);
-        })
+          return axios.get(apiForecastUrl);
+        });
   }
 }
