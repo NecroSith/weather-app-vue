@@ -92,6 +92,9 @@ export default {
         case 'moderate rain': {
           return img('./rain.png');
         }
+        case 'light rain': {
+          return img('./light-rain.png');
+        }
         default: break;
       }
     }

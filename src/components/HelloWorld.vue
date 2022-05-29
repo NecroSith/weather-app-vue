@@ -13,8 +13,6 @@ export default {
   name: 'HelloWorld',
   components: {
     WeatherResult
-  },
-  created() {
   }
 }
 </script>
