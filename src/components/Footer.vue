@@ -13,7 +13,13 @@ export default {
 <style scoped>
   footer {
     bottom: 0;
-    background: blue;
+    background: green;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer > a {
+    color: white;
   }
 </style>

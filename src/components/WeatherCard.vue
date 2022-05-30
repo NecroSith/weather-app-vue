@@ -55,9 +55,9 @@ export default {
       const unixTimestamp = this.weatherData.dt
       const date = new Date(unixTimestamp * 1000);
       const day = date.getDate();
-      const month = "0" + date.getMonth();
+      const month = date.getMonth() + 1;
 
-      return day + '.' + month;
+      return day + '.' + (month > 10 ? month : `0${month}`);
     },
     getTempValue(rawValue) {
       const rounded = Math.round(rawValue);
